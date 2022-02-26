@@ -73,7 +73,7 @@ func (c *ClockWiseSpiralServiceServer) GenerateSpiral(ctx context.Context, req *
 		}
 
 		mid := new(sp.MiddleRequest)
-		
+
 		mid.Mid = eq[f:l]
 
 		response.Responses = append(response.Responses, mid)
