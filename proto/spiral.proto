@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package spiral;
+
+
+message NumbRequest {
+    int32 num = 1;
+}
+
+message MiddleRequest {
+    repeated int32 mid = 1;
+}
+
+message NumbResponse{
+    repeated MiddleRequest responses = 1;
+}
+
+service ClockWiseSpiralService{
+    rpc GenerateSpiral(NumbRequest) returns (NumbResponse);
+}
