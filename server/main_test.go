@@ -34,15 +34,15 @@ func TestMain(m *testing.M) {
 }
 
 func Equal(a, b []int32) bool {
-    if len(a) != len(b) {
-        return false
-    }
-    for i, v := range a {
-        if v != b[i] {
-            return false
-        }
-    }
-    return true
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func TestNums(t *testing.T) {
@@ -63,14 +63,14 @@ func TestNums(t *testing.T) {
 
 		var ex []*sp.MiddleRequest
 		ex = append(ex, &sp.MiddleRequest{Mid: []int32{1, 2, 3}},
-			            &sp.MiddleRequest{Mid: []int32{8, 9, 4}},
-			            &sp.MiddleRequest{Mid: []int32{7, 6, 5}})
+			&sp.MiddleRequest{Mid: []int32{8, 9, 4}},
+			&sp.MiddleRequest{Mid: []int32{7, 6, 5}})
 
 		for a, v := range r.Responses {
 			for b, e := range ex {
 				if a == b {
-					j:= Equal(v.Mid,e.Mid)
-					if j!= true {
+					j := Equal(v.Mid, e.Mid)
+					if j != true {
 						t.Error("Expected true, got ", j)
 					}
 				}
